@@ -1,9 +1,12 @@
 .app {
   display: flex;
   flex-direction: column;
-  /* background-color: rgba(4, 12, 24, 1); */
-  background-color: rgb(49, 43, 43);
+  background-color: rgba(4, 12, 24, 1);
+  /* background-color: rgb(49, 43, 43); */
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .main {

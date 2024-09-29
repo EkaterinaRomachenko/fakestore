@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Home from '../Home/Home';
 import Footer from '../Footer/Footer';
 import Delivery from '../Delivery/Delivery';
+import CardDetails from '../CardDetails/CardDetails';
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const App: FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/delivery" element={<Delivery />} />
+            <Route path="/product-details/:productId" element={<CardDetails />} />
           </Routes>
         </main>
         <Footer />
