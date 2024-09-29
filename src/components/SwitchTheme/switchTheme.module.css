@@ -1,10 +1,33 @@
-.theme {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+.button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 3px 0 0;
 }
 
-.theme:hover{
-    color: #ff1493;
+.button:hover .theme {
+  color: #ff1493;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.lightTheme {
+  background-color: var(--light-theme-background);
+  color: var(--light-theme-color);
+}
+
+.darkTheme {
+  background-color: var(--dark-theme-background);
+  color: var(--dark-theme-color);
+}
+
+.lightThemeIcon {
+  color: var(--light-theme-color);
+}
+
+.darkThemeIcon {
+  color: var(--dark-theme-color);
+}
+
 

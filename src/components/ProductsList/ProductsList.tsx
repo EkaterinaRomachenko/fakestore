@@ -10,7 +10,7 @@ const ProductsList: FC = () => {
   return (
     <ul className={styles.productsList}>
       {productsData.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product} theme=' ' />
       ))}
     </ul>
   );

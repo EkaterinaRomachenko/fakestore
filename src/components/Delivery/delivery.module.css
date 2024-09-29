@@ -1,5 +1,5 @@
 .title {
-  color: white;
+  /* color: white; */
   font-size: 30px;
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -15,22 +15,7 @@
   box-sizing: border-box;
   padding: 0 0 0 20px;
 }
-/* .flowtext .tn-atom {
-  background: linear-gradient(90deg, #e933ff, #ffb400, #ff3333, #334dff, #e933ff);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textflow 5s linear infinite;
-}
-@keyframes textflow {
-  from {
-    background-position: 0% center;
-  }
-  to {
-    background-position: 200% center;
-  }
-} */
+
 
 .deliveryList__title {
   background: linear-gradient(90deg, #e933ff, #ffb400, #ff3333, #334dff, #e933ff);
@@ -59,7 +44,7 @@
   gap: 80px;
   margin: 0;
   padding: 0;
-  color: white;
+  /* color: white; */
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -72,12 +57,12 @@
   gap: 15px;
   margin: 0;
   padding: 0;
-  color: #c0c0c0;
+  /* color: #c0c0c0; */
   width: 350px;
 }
 
 .deliveryList__info__text {
-  color: white;
+  /* color: white; */
   font-size: 20px;
   line-height: 1.5;
   font-family: 'Roboto', sans-serif;
