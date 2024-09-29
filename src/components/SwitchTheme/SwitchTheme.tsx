@@ -1,24 +1,29 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import styles from './switchTheme.module.css';
 import { IoMoonOutline } from 'react-icons/io5';
-const SwitchTheme: FC = () => {
-  const [theme, setTheme] = React.useState('light');
+import { IoSunnyOutline } from 'react-icons/io5';
+import { useTheme } from '../../Context/ThemeContext';
 
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-    console.log(theme);
+const SwitchTheme: FC = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  const handleToggle = () => {
+    toggleTheme();
   };
 
+  useEffect(() => {
+    document.body.classList.toggle(styles.lightTheme, theme === 'light');
+    document.body.classList.toggle(styles.darkTheme, theme === 'dark');
+  }, [theme]);
+
   return (
-    <div>
-      <a href="#" onClick={toggleTheme} className={styles.switcher}>
-        <IoMoonOutline className={styles.theme} />
-      </a>
-    </div>
+    <button className={styles.button} onClick={handleToggle}>
+      {theme === 'light' ? (
+        <IoSunnyOutline size={34} className={`${styles.theme} ${styles.lightThemeIcon}`} />
+      ) : (
+        <IoMoonOutline size={34} className={`${styles.theme} ${styles.darkThemeIcon}`} />
+      )}
+    </button>
   );
 };
 
