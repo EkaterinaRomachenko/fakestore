@@ -29,7 +29,7 @@ body {
 }
 
 :root {
-  --light-theme-background: #f9f9f9;
+  --light-theme-background: #fff;
   --light-theme-color: #000;
   --dark-theme-background: #000;
   --dark-theme-color: #fff;
