@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import { FaAngleDown } from 'react-icons/fa6';
 import CounterBtn from '../CounterBtn/CounterBtn';
 import { CiShare2 } from 'react-icons/ci';
+import TabsProduct from '../TabsProduct/TabsProduct';
+import Reviews from '../Reviews/Reviews';
 
 const CardDetails: FC = () => {
   // получаем данные из store
@@ -22,7 +24,7 @@ const CardDetails: FC = () => {
 
   return (
     <section className={styles.cardDetails}>
-      <div className={styles.cardDetails__container}>
+      <div className={styles.cardDetails__containerTop}>
         <img src={product.image} alt={product.title} className={styles.cardDetails__image} />
         <div className={styles.cardDetails__info}>
           <article className={styles.cardDetails__infoTop}>
@@ -52,9 +54,10 @@ const CardDetails: FC = () => {
           </button>
         </div>
       </div>
-      <div className={styles.cardDetails__content}>
-        <h2 className={styles.cardDetails__title}>{product.title}</h2>
-        <p className={styles.cardDetails__description}>{product.description}</p>
+      <div className={styles.cardDetails__containerBottom}>
+        <TabsProduct product={product} />
+        <h2 className={styles.reviews__title}>Reviews</h2>
+        <Reviews />
       </div>
     </section>
   );

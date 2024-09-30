@@ -1,0 +1,36 @@
+.reviews {
+  display: flex;
+  gap: 40px;
+}
+
+.reviews__score {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviews__score__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviews__score__container__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.reviews__score__container__item__line {
+  border-bottom: 1px solid #f2f2f2;
+  width: 400px;
+}
+
+.reviews__score__container__item__stars{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

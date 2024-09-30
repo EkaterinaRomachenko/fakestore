@@ -16,7 +16,6 @@
   padding: 0 0 0 20px;
 }
 
-
 .deliveryList__title {
   background: linear-gradient(90deg, #e933ff, #ffb400, #ff3333, #334dff, #e933ff);
   background-size: 200% auto;
@@ -77,5 +76,5 @@
   height: 64px;
   margin: 0;
   padding: 0;
-  color: #ff1493;
+  color: #ff8c00;
 }
