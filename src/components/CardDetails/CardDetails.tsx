@@ -57,7 +57,7 @@ const CardDetails: FC = () => {
       <div className={styles.cardDetails__containerBottom}>
         <TabsProduct product={product} />
         <h2 className={styles.reviews__title}>Reviews</h2>
-        <Reviews />
+        <Reviews product={product} />
       </div>
     </section>
   );

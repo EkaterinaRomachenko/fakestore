@@ -1,0 +1,35 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: #ffffff;
+}
+
+.modalContainer {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalClose {
+  position: absolute;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  top: 50px;
+  right: 60px;
+  color: black;
+}
+
+.modalClose:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+  cursor: pointer;
+}

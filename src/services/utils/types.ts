@@ -26,3 +26,15 @@ export type TResponseBody = {
     success: boolean,
     data: TProduct[]
 }
+
+// типизация для getProducts
+export type IProps = {
+    product: TProduct;
+}
+
+export type Reviews = {
+    advantages: string;
+    disadvantages: string;
+    description: string;
+    images: File[];
+};

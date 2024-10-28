@@ -9,7 +9,6 @@ import Header from '../Header/Header';
 import Home from '../Home/Home';
 import Footer from '../Footer/Footer';
 import Delivery from '../Delivery/Delivery';
-import { ThemeProvider} from '../../Context/ThemeContext';
 import CardDetails from '../CardDetails/CardDetails';
 
 const App: FC = () => {
@@ -20,22 +19,19 @@ const App: FC = () => {
     dispatch(fetchProducts());
   }, []);
 
-
   return (
     <YMaps>
-      <ThemeProvider>
-        <div className={styles.app}>
-          <Header />
-          <main className={styles.main}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/delivery" element={<Delivery />} />
-              <Route path="/product/:productId" element={<CardDetails />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <div className={styles.app}>
+        <Header />
+        <main className={styles.main}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/delivery" element={<Delivery />} />
+            <Route path="/product/:productId" element={<CardDetails />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </YMaps>
   );
 };
