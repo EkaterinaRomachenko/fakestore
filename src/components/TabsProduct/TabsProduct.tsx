@@ -1,16 +1,13 @@
 import React, { FC, useState } from 'react';
 import styles from './tabsProduct.module.css';
-import { TProduct } from '../../services/utils/types';
 import DescriptionTabContent from '../DescriptionTabContent/DescriptionTabContent';
 import AboutBrandTabContent from '../AboutBrandTabContent/AboutBrandTabContent';
 import CompositionTabContent from '../CompositionTabContent/CompositionTabContent';
+import { IProps } from '../../services/utils/types';
 
 // Список табов
 const tabs = ['Description', 'About the brand', 'Composition'];
 
-interface IProps {
-  product: TProduct;
-}
 
 const TabsProduct: FC<IProps> = ({ product }) => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
