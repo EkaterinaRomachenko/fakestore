@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './Context/ThemeContext';
 import { ReviewsProvider } from './Context/ReviewsContext';
 import { ModalProvider } from './Context/ModalContext';
+import { RatingProvider } from './Context/RatingsContext';
 // Redux
 import { Provider } from 'react-redux';
 import { store } from './services/store';
@@ -15,7 +16,9 @@ root.render(
       <ThemeProvider>
         <ReviewsProvider>
           <ModalProvider>
-            <App />
+            <RatingProvider>
+              <App />
+            </RatingProvider>
           </ModalProvider>
         </ReviewsProvider>
       </ThemeProvider>

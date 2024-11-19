@@ -3,6 +3,7 @@ import { MdOutlineStarOutline, MdOutlineStar } from 'react-icons/md';
 import styles from './reviewsList.module.css';
 import NotReviews from '../NotReviews/NotReviews';
 import moment from 'moment';
+import { useReviewsContext } from '../../Context/ReviewsContext';
 
 type IReviewsList = {
   advantages: string;
@@ -18,6 +19,8 @@ type ReviewListProps = {
 };
 
 const ReviewList: FC<ReviewListProps> = ({ reviews }) => {
+  const { selectedRating } = useReviewsContext();
+ 
   return (
     <>
       {reviews.length === 0 && <NotReviews />}
@@ -25,29 +28,29 @@ const ReviewList: FC<ReviewListProps> = ({ reviews }) => {
         <div key={index} className={styles.reviewList}>
           <div className={styles.reviewList__review}>
             <div style={{ display: 'flex', gap: '30px' }}>
-              <h3 className={styles.reviewList__title}>Review {index + 1}</h3>
+              <h3 className={styles.reviewList__title}>Отзыв {index + 1}</h3>
               <div className={styles.reviewList__stars}>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <MdOutlineStarOutline
-                    color={i < review.rating ? '#FF9900' : '#E8E8E8'}
-                    key={i}
-                    size={20}
-                  />
-                ))}
+                {Array.from({ length: 5 }, (_, i) =>
+                  selectedRating > i ? (
+                    <MdOutlineStar color="#FF9900" key={i} size={20} />
+                  ) : (
+                    <MdOutlineStarOutline color="#FF9900" key={i} size={20} />
+                  ),
+                )}
               </div>
             </div>
             <p className={styles.reviewList__time}>{moment(review.date).format('DD.MM.YYYY')}</p>
           </div>
           <div className={styles.reviewList__item}>
-            <p className={styles.reviewList__text__bold}>Advantages:</p>
+            <p className={styles.reviewList__text__bold}>Преимущества:</p>
             <p className={styles.reviewList__text}>{review.advantages}</p>
           </div>
           <div className={styles.reviewList__item}>
-            <p className={styles.reviewList__text__bold}>Disadvantages:</p>
+            <p className={styles.reviewList__text__bold}>Недостатки:</p>
             <p className={styles.reviewList__text}>{review.disadvantages}</p>
           </div>
           <div className={styles.reviewList__item}>
-            <p className={styles.reviewList__text__bold}>Description:</p>
+            <p className={styles.reviewList__text__bold}>Описание:</p>
             <p className={styles.reviewList__text}>{review.description}</p>
           </div>
           <div className={styles.reviewList__images}>

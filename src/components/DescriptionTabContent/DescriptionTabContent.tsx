@@ -9,7 +9,7 @@ interface IProps {
 const DescriptionTabContent: FC<IProps> = ({ product }) => {
   return (
     <>
-      <h2 className={styles.descriptionTabContent__title}>{product.title}</h2>
+      <h2 className={styles.descriptionTabContent__title}>{product.name}</h2>
       <p className={styles.descriptionTabContent__description}>{product.description}</p>
       <div className={styles.descriptionTabContent__info}>
         <p className={styles.descriptionTabContent__text}>Category: </p>

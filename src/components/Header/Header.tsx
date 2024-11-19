@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styles from './header.module.css';
 import SwitchTheme from '../SwitchTheme/SwitchTheme';
+import { FaHeart } from "react-icons/fa";
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 

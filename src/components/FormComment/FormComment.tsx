@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback, useEffect } from 'react';
+import React, { FC, useState, useCallback } from 'react';
 import styles from './formComment.module.css';
 import { IoIosClose } from 'react-icons/io';
 import { Reviews } from '../../services/utils/types';
@@ -22,13 +22,6 @@ export const FormComment: FC = () => {
   // закрытие модального окна
   const { closeModal } = useModal();
 
-  // Эффект для освобождения памяти
-  useEffect(() => {
-    return () => {
-      previewUrls.forEach((url) => URL.revokeObjectURL(url));
-    };
-  }, [previewUrls]);
-
   // переключение активного текстареа
   const handleToggleActive = useCallback((textarea: string | null) => {
     setActiveTextarea(textarea);
@@ -48,11 +41,6 @@ export const FormComment: FC = () => {
     if (files) {
       const fileArray = Array.from(files);
       const urls = fileArray.map((file) => URL.createObjectURL(file));
-      // const updateFiles = (prevFiles: File[]) => [...prevFiles, ...Array.from(files)];
-      // const updateUrls = (prevUrls: string[]) => [
-      //   ...prevUrls,
-      //   ...Array.from(files).map((file) => URL.createObjectURL(file)),
-      // ];
       setSelectedFiles(fileArray);
       setPreviewUrls(urls);
     }
@@ -83,9 +71,9 @@ export const FormComment: FC = () => {
 
   return (
     <div className={styles.formComment}>
-      <h2 className={styles.formComment__title}>Tell us about the product</h2>
+      <h2 className={styles.formComment__title}>Расскажите о продукте</h2>
       <form className={styles.formComment__form} onSubmit={handleSubmit}>
-        {['advantages', 'disadvantages', 'description'].map((label, index) => (
+        {['преимущества', 'недостатки', 'описание'].map((label, index) => (
           <label
             key={index}
             htmlFor={label.toLowerCase()}
@@ -94,7 +82,7 @@ export const FormComment: FC = () => {
             <p
               className={`${styles.formComment__form__item__label} ${
                 activeTextarea === label.toLowerCase() ||
-                reviews[label.toLowerCase() as keyof Reviews].toString() ||
+                reviews[label.toLowerCase() as keyof Reviews]?.toString() ||
                 ''
                   ? styles.movedUp
                   : ''
@@ -110,7 +98,7 @@ export const FormComment: FC = () => {
               maxLength={400}
               id={label.toLowerCase()}
               name={label.toLowerCase()}
-              value={reviews[label.toLowerCase() as keyof Reviews].toString() || ''}
+              value={reviews[label.toLowerCase() as keyof Reviews]?.toString() || ''}
               onChange={handleTextareaChange}
               onFocus={() => handleToggleActive(label.toLowerCase())}
             />
@@ -123,7 +111,7 @@ export const FormComment: FC = () => {
             multiple
             accept="image/*"
             onChange={handleFileChange}
-            placeholder="Upload images"
+            placeholder="Загрузить фото"
           />
         </label>
         <div className={styles.formComment__form__item__images}>
@@ -143,7 +131,7 @@ export const FormComment: FC = () => {
           ))}
         </div>
         <button type="submit" className={styles.formComment__button}>
-          Leave feedback
+          Оставить отзыв
         </button>
       </form>
     </div>

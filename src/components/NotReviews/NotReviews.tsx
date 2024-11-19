@@ -4,8 +4,7 @@ import styles from "./notReviews.module.css";
 const NotReviews: FC = () => {
     return (
         <div className={styles.notReviews}>
-            <p className={styles.notReviews__text}>No reviews have been left here yet...</p>
-
+            <p className={styles.notReviews__text}>Отзывов пока нет...</p>
         </div>
     );
 };

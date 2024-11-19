@@ -9,6 +9,8 @@ import { CiShare2 } from 'react-icons/ci';
 import TabsProduct from '../TabsProduct/TabsProduct';
 import Reviews from '../Reviews/Reviews';
 
+
+
 const CardDetails: FC = () => {
   // получаем данные из store
   const productData = useSelector(getProductsData);
@@ -16,48 +18,45 @@ const CardDetails: FC = () => {
   const { productId } = useParams();
 
   // находим продукт по id
-  const product = productData.find((item) => item.id === Number(productId));
+  const product = productData.find((item) => item.id === Number(productId) );
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>Продукт не найден 🙁 </div>;
   }
 
   return (
     <section className={styles.cardDetails}>
       <div className={styles.cardDetails__containerTop}>
-        <img src={product.image} alt={product.title} className={styles.cardDetails__image} />
+        <img src={product.imageUrl} alt={product.name} className={styles.cardDetails__image} />
         <div className={styles.cardDetails__info}>
           <article className={styles.cardDetails__infoTop}>
-            <h2 className={styles.cardDetails__title}>{product.title}</h2>
+            <h2 className={styles.cardDetails__title}>{product.name}</h2>
             <button className={styles.cardDetails__buttonMore} type="button">
-              <p>More details</p>
+              <p>Подробнее</p>
               <FaAngleDown />
             </button>
           </article>
-          <p className={styles.cardDetails__price}>${product.price}</p>
+          <p className={styles.cardDetails__price}>{product.price} ₽</p>
           <article className={styles.cardDetails__containerInfo}>
-            <h3 className={styles.cardDetails__subtitle}>Size</h3>
+            <h3 className={styles.cardDetails__subtitle}>Объём / мл</h3>
             <ul className={styles.cardDetails__sizes}>
-              <li className={styles.cardDetails__sizes__item}>S</li>
-              <li className={styles.cardDetails__sizes__item}>M</li>
-              <li className={styles.cardDetails__sizes__item}>L</li>
-              <li className={styles.cardDetails__sizes__item}>XL</li>
+              <li className={styles.cardDetails__sizes__item}>50</li>
+              <li className={styles.cardDetails__sizes__item}>100</li>
             </ul>
           </article>
           <article className={styles.cardDetails__containerInfo}>
             <CounterBtn />
-            <button className={styles.cardDetails__button}>Add to cart</button>
+            <button className={styles.cardDetails__button}>В корзину</button>
           </article>
           <button className={styles.cardDetails__buttonShare}>
-            <span>Share</span>
+            <span>Поделиться</span>
             <CiShare2 className={styles.cardDetails__icon} />
           </button>
         </div>
       </div>
       <div className={styles.cardDetails__containerBottom}>
         <TabsProduct product={product} />
-        <h2 className={styles.reviews__title}>Reviews</h2>
-        <Reviews product={product} />
+        <Reviews product={product}   />
       </div>
     </section>
   );

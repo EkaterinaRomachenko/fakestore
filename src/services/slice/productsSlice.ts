@@ -7,7 +7,7 @@ type TProductInitialState = {
     isLoading: boolean;
     error: boolean;
 };
-// 
+
 const initialState: TProductInitialState = {
     products: [],
     isLoading: false,
@@ -16,7 +16,6 @@ const initialState: TProductInitialState = {
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
     const response = await getProducts();
-    console.log(response);
     return response
 });
 

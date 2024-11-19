@@ -2,11 +2,11 @@ import React, { FC, useState } from 'react';
 import styles from './tabsProduct.module.css';
 import DescriptionTabContent from '../DescriptionTabContent/DescriptionTabContent';
 import AboutBrandTabContent from '../AboutBrandTabContent/AboutBrandTabContent';
-import CompositionTabContent from '../CompositionTabContent/CompositionTabContent';
+import ApplicationTabContent from '../ApplicationTabContent/ApplicationTabContent';
 import { IProps } from '../../services/utils/types';
 
 // Список табов
-const tabs = ['Description', 'About the brand', 'Composition'];
+const tabs = ['Описание', 'Применение', 'О бренде'];
 
 
 const TabsProduct: FC<IProps> = ({ product }) => {
@@ -20,12 +20,12 @@ const TabsProduct: FC<IProps> = ({ product }) => {
   // Показываем блок по активному табу
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'Description':
+      case 'Описание':
         return <DescriptionTabContent product={product} />;
-      case 'About the brand':
-        return <AboutBrandTabContent />;
-      case 'Composition':
-        return <CompositionTabContent />;
+      case 'Применение':
+        return <ApplicationTabContent product={product} />;
+      case 'О бренде':
+        return <AboutBrandTabContent product={product} />;
       default:
         return null;
     }

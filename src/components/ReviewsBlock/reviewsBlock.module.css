@@ -21,6 +21,7 @@
 .reviewsBlock__content__image {
   width: 300px;
   height: 340px;
+  object-fit: cover;
 }
 
 .reviewsBlock__content__title {

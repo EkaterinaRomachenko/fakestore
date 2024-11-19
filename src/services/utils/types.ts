@@ -10,15 +10,16 @@ export type RootState = ReturnType<typeof store.getState>;
 // типизация для products
 export type TProduct = {
     id: number,
-    title: string,
-    price: number,
-    description: string,
+    name : string,
     category: string,
-    image: string,
-    rating: {
-        rate: number,
-        count: number
-    }
+    brand: string,
+    description: string,
+    imageUrl: string,
+    price: number,
+    application : string,
+    aboutBrand : string,
+    compound : string,
+    rating: number
 }
 
 // типизация для getProducts
@@ -38,3 +39,5 @@ export type Reviews = {
     description: string;
     images: File[];
 };
+
+

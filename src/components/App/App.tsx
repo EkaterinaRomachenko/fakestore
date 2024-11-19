@@ -11,6 +11,7 @@ import Footer from '../Footer/Footer';
 import Delivery from '../Delivery/Delivery';
 import CardDetails from '../CardDetails/CardDetails';
 
+
 const App: FC = () => {
   const dispatch = useDispatch();
   // получаем список продуктов
