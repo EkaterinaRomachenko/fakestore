@@ -6,12 +6,12 @@ import moment from 'moment';
 import { useReviewsContext } from '../../Context/ReviewsContext';
 
 type IReviewsList = {
-  advantages: string;
-  disadvantages: string;
-  description: string;
-  images: File[];
-  date: string;
-  rating: number;
+  advantages: string,
+  disadvantages: string,
+  description: string,
+  images: File[],
+  date: string,
+  rating: number,
 };
 
 type ReviewListProps = {
@@ -20,7 +20,7 @@ type ReviewListProps = {
 
 const ReviewList: FC<ReviewListProps> = ({ reviews }) => {
   const { selectedRating } = useReviewsContext();
- 
+  console.log(reviews);
   return (
     <>
       {reviews.length === 0 && <NotReviews />}
@@ -32,9 +32,9 @@ const ReviewList: FC<ReviewListProps> = ({ reviews }) => {
               <div className={styles.reviewList__stars}>
                 {Array.from({ length: 5 }, (_, i) =>
                   selectedRating > i ? (
-                    <MdOutlineStar color="#FF9900" key={i} size={20} />
+                    <MdOutlineStar color="#9400d3" key={i} size={20} />
                   ) : (
-                    <MdOutlineStarOutline color="#FF9900" key={i} size={20} />
+                    <MdOutlineStarOutline color="#9400d3" key={i} size={20} />
                   ),
                 )}
               </div>

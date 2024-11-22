@@ -2,19 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px 30px 50px;
-  box-shadow: 0px 0px 15px 0px #ff8c00;
   width: 100%;
   box-sizing: border-box;
-}
-
-.title {
-  color: #ff8c00;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
+  padding: 0 50px;
 }
 
 .menu {
@@ -29,6 +19,35 @@
 
 .menu__item {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 400;
   font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.button:hover .icon {
+  color: #9400d3;
+  cursor: pointer;
+}
+
+.lightThemeIcon {
+  color: var(--light-theme-color);
+}
+
+.darkThemeIcon {
+  color: var(--dark-theme-color);
+}
+
+.button__text {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 400;
 }

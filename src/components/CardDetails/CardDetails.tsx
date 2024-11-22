@@ -9,8 +9,6 @@ import { CiShare2 } from 'react-icons/ci';
 import TabsProduct from '../TabsProduct/TabsProduct';
 import Reviews from '../Reviews/Reviews';
 
-
-
 const CardDetails: FC = () => {
   // получаем данные из store
   const productData = useSelector(getProductsData);
@@ -18,7 +16,7 @@ const CardDetails: FC = () => {
   const { productId } = useParams();
 
   // находим продукт по id
-  const product = productData.find((item) => item.id === Number(productId) );
+  const product = productData.find((item) => item.id === Number(productId));
 
   if (!product) {
     return <div>Продукт не найден 🙁 </div>;
@@ -46,7 +44,10 @@ const CardDetails: FC = () => {
           </article>
           <article className={styles.cardDetails__containerInfo}>
             <CounterBtn />
-            <button className={styles.cardDetails__button}>В корзину</button>
+            <div>
+              <button className={styles.cardDetails__button}>В корзину</button>
+
+            </div>
           </article>
           <button className={styles.cardDetails__buttonShare}>
             <span>Поделиться</span>
@@ -56,7 +57,7 @@ const CardDetails: FC = () => {
       </div>
       <div className={styles.cardDetails__containerBottom}>
         <TabsProduct product={product} />
-        <Reviews product={product}   />
+        <Reviews product={product} />
       </div>
     </section>
   );

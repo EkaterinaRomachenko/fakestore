@@ -43,7 +43,7 @@ const ReviewsBlock: FC<IProps> = ({ product }) => {
       {activeTab === 'rating' ? (
         <ReviewsForm onNext={() => handleTabChange('comment')} />
       ) : (
-        <FormComment /> // Компонент для ввода комментариев
+        <FormComment /> 
       )}
     </div>
   );

@@ -1,24 +1,23 @@
 .button {
   background-color: transparent;
   border: none;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 3px 0 0;
+  padding: 0;
+  margin-right: 30px;
 }
 
 .button:hover .theme {
-  color: #ff8c00;
+  color: #9400d3;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .lightTheme {
-  background-color: var(--light-theme-background);
+  background: var(--light-theme-background);
   color: var(--light-theme-color);
 }
 
 .darkTheme {
-  background-color: var(--dark-theme-background);
+  background: var(--dark-theme-background);
   color: var(--dark-theme-color);
 }
 

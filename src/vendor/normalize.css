@@ -30,9 +30,9 @@ body {
 
 :root {
   --light-theme-background: #fff;
-  --light-theme-color: #000;
-  --dark-theme-background: #000;
+  --dark-theme-background: linear-gradient(135deg, #1b1b3a 0%, #5c5c68 100%);
   --dark-theme-color: #fff;
+  --light-theme-color: #000;
 }
 
 a {

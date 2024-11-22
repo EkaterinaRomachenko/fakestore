@@ -1,11 +1,11 @@
-.cart__button {
+.heart__button {
   background-color: transparent;
   border: none;
   font-size: 24px;
   font-weight: bold;
 }
 
-.cart__button:hover .cart__icon {
+.heart__button:hover .heart__icon {
   color: #9400d3;
   cursor: pointer;
 }

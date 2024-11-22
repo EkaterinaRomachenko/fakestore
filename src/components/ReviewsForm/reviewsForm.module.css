@@ -61,7 +61,7 @@
   margin: 0;
   padding: 0;
   transition: 0.3s;
-  color: #ff8c00;
+  color: #9400d3;
 }
 
 .reviewsBlock__count {
@@ -99,5 +99,5 @@
 }
 
 .reviewsBlock__button.active {
-  background-color: #ff8c00;
+  background-color: #9400d3;
 }

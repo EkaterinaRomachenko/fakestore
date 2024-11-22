@@ -10,6 +10,8 @@ import Home from '../Home/Home';
 import Footer from '../Footer/Footer';
 import Delivery from '../Delivery/Delivery';
 import CardDetails from '../CardDetails/CardDetails';
+import Cart from '../Cart/Cart';
+import Favorites from '../Favorites/Favorites';
 
 
 const App: FC = () => {
@@ -29,6 +31,8 @@ const App: FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/delivery" element={<Delivery />} />
             <Route path="/product/:productId" element={<CardDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </main>
         <Footer />

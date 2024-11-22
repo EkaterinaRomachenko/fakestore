@@ -7,7 +7,6 @@
   margin: 0 auto;
 }
 
-
 /*  reviewsBlock__content */
 
 .reviewsBlock__content {
@@ -56,6 +55,5 @@
 }
 
 .reviewsBlock__nav__itemActive {
-  color: #ff8c00;
+  color: #9400d3;
 }
-

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 type TRatingsContext = {
   rating: { [key: number]: number };
@@ -14,6 +14,7 @@ const initialState: TRatingsContext = {
     5: 0,
   },
   setRating: () => {},
+
 };
 
 export const RatingsContext = React.createContext<TRatingsContext | undefined>(undefined);
@@ -31,3 +32,11 @@ export const RatingProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default RatingsContext;
+
+export const useRatingsContext = () => {
+  const context = useContext(RatingsContext);
+  if (!context) {
+    throw new Error('ReviewsContext is not provided');
+  }
+  return context;
+};

@@ -12,12 +12,30 @@ interface IReviews {
   product: TProduct;
 }
 
-const ratings = [1, 2, 3, 4, 5];
+const ratings: number[] = [1, 2, 3, 4, 5];
 
 const Reviews: FC<IReviews> = ({ product }) => {
   const { openModal, closeModal, isOpen } = useModal();
   const { allReviews } = useReviewsContext();
+  console.log(allReviews);
 
+  const calculateProductRating = () => {
+    if (allReviews.length === 0) {
+      return 0;
+    }
+    const sumOfRatings = allReviews.reduce((acc, review) => acc + review.rating, 0);
+    const averageRating = sumOfRatings / allReviews.length;
+    return averageRating.toFixed(1);
+  };
+
+  const calculateRatingPercent = (ratingValue: number) => {
+    if (allReviews.length === 0) {
+      return 0;
+    }
+    const reviewsWithRating = allReviews.filter((review) => review.rating === ratingValue);
+    const percent = (reviewsWithRating.length / allReviews.length) * 100;
+    return percent.toFixed(0);
+  };
   return (
     <div className={styles.reviews}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
@@ -27,7 +45,8 @@ const Reviews: FC<IReviews> = ({ product }) => {
             Отзывов: <span className={styles.reviews__text__number}>{allReviews.length}</span>
           </p>
           <p>
-            Оценка товара: <span className={styles.reviews__text__number}>{product.rating}</span>
+            Оценка товара:{' '}
+            <span className={styles.reviews__text__number}>{calculateProductRating()}</span>
           </p>
         </div>
       </div>
@@ -40,10 +59,19 @@ const Reviews: FC<IReviews> = ({ product }) => {
                   <span className={styles.reviews__score__container__item__stars__number}>
                     {rating}
                   </span>
-                  <IoStarSharp size={20} color="#FF9900" />
+                  <IoStarSharp size={20} color="#9400d3" />
                 </div>
-                <span className={styles.reviews__score__container__item__line}></span>
-                <p className={styles.reviews__score__container__item__person}>0%</p>
+                <span className={styles.reviews__score__container__item__line}>
+                  <span
+                    className={styles.reviews__score__container__item__active}
+                    style={{
+                      width: `${calculateRatingPercent(rating)}%`,
+                    }}
+                  />
+                </span>
+                <p className={styles.reviews__score__container__item__person}>
+                  {calculateRatingPercent(rating)}%
+                </p>
               </div>
             ))}
           </div>

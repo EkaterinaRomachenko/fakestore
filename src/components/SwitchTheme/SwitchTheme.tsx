@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import styles from './switchTheme.module.css';
-import { IoMoonOutline } from 'react-icons/io5';
-import { IoSunnyOutline } from 'react-icons/io5';
+import { PiSunThin } from "react-icons/pi";
+import { PiMoonStarsThin } from 'react-icons/pi';
 import { useTheme } from '../../Context/ThemeContext';
 
 const SwitchTheme: FC = () => {
@@ -19,9 +19,9 @@ const SwitchTheme: FC = () => {
   return (
     <button className={styles.button} onClick={handleToggle}>
       {theme === 'light' ? (
-        <IoSunnyOutline size={34} className={`${styles.theme} ${styles.lightThemeIcon}`} />
+        <PiSunThin size={30} className={`${styles.theme} ${styles.lightThemeIcon}`} />
       ) : (
-        <IoMoonOutline size={34} className={`${styles.theme} ${styles.darkThemeIcon}`} />
+        <PiMoonStarsThin size={30} className={`${styles.theme} ${styles.darkThemeIcon}`} />
       )}
     </button>
   );

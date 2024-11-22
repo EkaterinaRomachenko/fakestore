@@ -10,6 +10,13 @@ const INITIAL_REVIEWS: Reviews = {
   disadvantages: '',
   description: '',
   images: [],
+  rating: 0,
+};
+
+const reviewsPlaceholder = {
+  advantages: 'преимущества',
+  disadvantages: 'недостатки',
+  description: 'описание',
 };
 
 export const FormComment: FC = () => {
@@ -73,7 +80,7 @@ export const FormComment: FC = () => {
     <div className={styles.formComment}>
       <h2 className={styles.formComment__title}>Расскажите о продукте</h2>
       <form className={styles.formComment__form} onSubmit={handleSubmit}>
-        {['преимущества', 'недостатки', 'описание'].map((label, index) => (
+        {Object.keys(reviewsPlaceholder).map((label, index) => (
           <label
             key={index}
             htmlFor={label.toLowerCase()}
